@@ -1,6 +1,6 @@
 //Global variables
 
-let user = { name: "iddriss" };
+let user = { name: "your name" };
 let todoItems = []
 let doneItems = []
 let form = document.querySelector(".form");
@@ -15,41 +15,11 @@ let completed = document.querySelector(".completed");
 
 
 //######################## Firebase code #################
+//1 Config
 
-var config = {
-    apiKey: "AIzaSyDU--lM2nA3JIHj6VHz4Kp8klRksISPMmk",
-    authDomain: "dsctodo.firebaseapp.com",
-    databaseURL: "https://dsctodo.firebaseio.com",
-    projectId: "dsctodo",
-    storageBucket: "dsctodo.appspot.com",
-    messagingSenderId: "292991377466"
-};
-firebase.initializeApp(config);
+//2 addTodb function
 
-function addTodb(location, data) {
-    let db = firebase.firestore();
-    let userRef = db.collection("users").doc(location)
-
-    userRef.set(data, { merge: true })
-        .then(() => console.log("Done"))
-        .catch(err => console.log(err))
-}
-
-function readFromdb(location) {
-    let db = firebase.firestore();
-    let userRef = db.collection("users").doc(location)
-
-    userRef.onSnapshot(snap => {
-        //console.log(snap.data())
-        data = snap.data()
-        updateUI(data.todo, todoList, "todo")
-        updateUI(data.done, doneList, "done")
-        todoItems = data.todo
-        doneItems = data.done
-    }, err => console.log(err));
-}
-
-
+//3 read from db function
 //####################### End of Firebase code ##################
 
 window.onload = readFromdb(user.name)
@@ -63,7 +33,7 @@ form.addEventListener("submit", (e) => {
     } else {
         todoItems.unshift({ "text": input.value, "done": false, "time": Date.now() })
         data = { todo: todoItems }
-        addTodb(user.name, data);
+//4 addTodb
     }
 })
 
@@ -109,8 +79,8 @@ function updateUI(arr, elRef, task) {
                 doneItems.splice(i, 1)
             }
 
-            addTodb(user.name, { todo: todoItems })
-            addTodb(user.name, { done: doneItems })
+ //5         addTodb(user.name, { todo: todoItems })
+ //6         addTodb(user.name, { done: doneItems })
         })
 
         let del = document.createElement("button");
