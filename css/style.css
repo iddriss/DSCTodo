@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main {
+  color: #5e5c5c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.main .side {
+  width: 30%;
+  max-width: 10rem;
+  background-color: #faf8f8;
+}
+
+.main .side ul {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2.2rem;
+}
+
+.main .side ul li {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  padding: 3rem .1rem;
+  background: #d4dddd;
+  margin: 3rem auto;
+  text-align: center;
+  font-weight: bold;
+  color: #5e5c5c;
+}
+
+.main .side ul li.active, .main .side ul li:hover {
+  background-color: #fff;
+}
+
+.main button {
+  margin-left: 0.1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.main button:hover {
+  -webkit-box-shadow: 0px 2px 7px 1px #c9c9c9, 0px 5px 7px 1px #e2e2e2;
+          box-shadow: 0px 2px 7px 1px #c9c9c9, 0px 5px 7px 1px #e2e2e2;
+}
+
+.main button:active {
+  -webkit-box-shadow: 0px 5px 7px 1px #e2e2e2;
+          box-shadow: 0px 5px 7px 1px #e2e2e2;
+  border-top: 2px solid #e2e2e2;
+  border-bottom: 2px solid #e2e2e2;
+}
+
+.main .content {
+  max-width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .content h1 {
+  margin: 2rem;
+}
+
+.main .content .todo {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .content .todo form {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 80%;
+}
+
+.main .content .todo form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .content .todo form input {
+  width: 80%;
+  padding: 0.6rem;
+  border: 2px solid #e2e2e2;
+  border-radius: 0.5rem;
+}
+
+.main .content .todo form button {
+  padding: 0.5rem 1.5rem;
+  background-color: #2a6be6;
+  color: #fff;
+  font-weight: bold;
+}
+
+.main .content .todo form button:hover {
+  background-color: #4a83ec;
+}
+
+.main .content .done {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .content .hidden {
+  display: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.todoList {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.todoList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 2px 7px 1px #c9c9c9, 0px 5px 7px 1px #e2e2e2;
+          box-shadow: 0px 2px 7px 1px #c9c9c9, 0px 5px 7px 1px #e2e2e2;
+}
+
+.todoList li p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0.2rem;
+  max-width: 80%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todoList li input {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 0.2rem;
+  padding: 0.5rem;
+}
+
+.todoList li button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0.5rem 1rem;
+  background-color: #f04040;
+  color: #fff;
+}
+
+.todoList li button:hover {
+  background-color: #f12d2d;
+}
+
+@media only screen and (max-width: 800px) {
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .side {
+    max-width: 100%;
+    width: 100%;
+  }
+  .main .side ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0rem;
+  }
+  .main .side ul li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 1rem;
+    margin: 0.4rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .content .todo, .content .done {
+    width: 100% !important;
+  }
+  .content .todo form div input, .content .done form div input {
+    width: 100% !important;
+  }
+  .content .todo form div button, .content .done form div button {
+    margin-left: 0.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
